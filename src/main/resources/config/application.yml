@@ -1,0 +1,14 @@
+spring:
+    profiles:
+        active: dev
+    servlet:
+        multipart:
+            max-request-size: 10MB #    上传文件总的最大值
+            max-file-size: 2MB  # 单个文件最大值
+    mvc:
+        static-path-pattern: /**
+logging:
+    level:
+        root: info
+        com.soul: info
+    file: log/my.log

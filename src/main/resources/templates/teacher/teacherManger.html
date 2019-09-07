@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>讲师管理</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" th:href="@{/bootstraptable/bootstrap-table.css}" href="../../static/bootstraptable/bootstrap-table.css">
+    <style>
+        .layout{
+            width: 80%;
+            margin: 150px auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="layout table ">
+        <a  class="glyphicon glyphicon-plus btn btn-success" data-toggle="modal" data-target="#myModal">添加讲师</a>
+        <!-- 模态框 -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">添加讲师</h4>
+                    </div>
+                    <!--模态框主题内容-->
+                    <div class="modal-body">
+                        <form id="teacherForm">
+                            <div class="form-group">
+                                <label for="username">讲师姓名</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="请输入讲师姓名">
+                            </div>
+                            <div class="form-group">
+                                <label for="age">年龄</label>
+                                <input type="text" class="form-control" id="age" name="age" placeholder="请输入讲师年龄">
+                            </div>
+                            <div class="form-group">
+                                <label for="lesson">所属学科</label>
+                                <input type="text" class="form-control" id="lesson" name="lesson" placeholder="请输入讲师所属学科">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">描述</label>
+                                <input type="text" class="form-control" id="description" name="description" placeholder="请输入讲师自我描述">
+                            </div>
+                            <div class="form-group">
+                                <label for="lifephoto">照片</label>
+                                <input type="file" id="lifephoto"  name="lifePhoto" data-url="/upload">
+                            </div>
+                            <div class="form-group photo">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-close" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary btn-addTeacher">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tableId"  style="margin-top: 10px;">
+            <table id="teacherTable"></table>
+        </div>
+
+        <!--报表-->
+        <div class="charts">
+            <div id="main" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script th:src="@{/jQueryfileupload/jquery.min.js}" src="../../static/jQueryfileupload/jquery.min.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.js}" src="../../static/bootstrap/js/bootstrap.js"></script>
+    <!--表格插件-->
+    <script th:src="@{/bootstraptable/bootstrap-table.js}" src="../../static/bootstraptable/bootstrap-table.js" type="text/javascript"></script>
+    <script th:src="@{/bootstraptable/bootstrap-table-zh-CN.js}" src="../../static/bootstraptable/bootstrap-table-zh-CN.js" type="text/javascript"></script>
+
+    <!--文件上传-->
+    <script th:src="@{/jQueryfileupload/jquery.ui.widget.js}" src="../../static/jQueryfileupload/jquery.ui.widget.js" type="text/javascript" ></script>
+    <script th:src="@{/jQueryfileupload/jquery.iframe-transport.js}" src="../../static/jQueryfileupload/jquery.iframe-transport.js" type="text/javascript"></script>
+    <script th:src="@{/jQueryfileupload/jquery.fileupload.js}" src="../../static/jQueryfileupload/jquery.fileupload.js" type="text/javascript"></script>
+    <!--echarts-->
+    <script type="text/javascript" th:src="@{/echarts/echarts.min.js}" src="../../static/echarts/echarts.min.js" ></script>
+    <script th:src="@{/js/teacher.js}" src="../../static/js/teacher.js" type="text/javascript"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>注册</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../static/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+            <div class="well">
+                <h2 class="page-header">注册</h2>
+                <form action="#" th:action="@{/user}" method="post">
+                    <div class="form-group">
+                        <label for="nameId">账号</label>
+                        <input type="text" name="username" id="nameId" class="form-control" th:field="${userForm.username}">
+                        <p class="form-control-static text-danger" th:if="${ #fields.hasErrors('userForm.username') }" th:errors="${userForm.username}">
+                            用户名不能为空
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="passId">密码</label>
+                        <input type="password" name="password" id="passId" class="form-control" th:field="${userForm.password}">
+                        <p class="form-control-static text-danger" th:if="${ #fields.hasErrors('userForm.password') }" th:errors="${userForm.password}">
+                            密码不能为空
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmpassId">确认密码</label>
+                        <input type="password" name="confirmpassword" id="confirmpassId" class="form-control" th:field="${userForm.confirmpassword}">
+                        <p class="form-control-static text-danger" th:if="${ #fields.hasErrors('userForm.confirmpassword') }" th:errors="${userForm.confirmpassword}">
+                            密码请保持一致
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneId">手机</label>
+                        <input type="text" name="phone" id="phoneId" class="form-control" th:field="${userForm.phone}">
+                        <p class="form-control-static text-danger" th:if="${ #fields.hasErrors('userForm.phone') }" th:errors="${userForm.phone}">
+                            请输入正确的密码
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailId">邮箱</label>
+                        <input type="text" name="email" id="emailId" class="form-control" th:field="${userForm.email}">
+                    </div>
+                    <p>
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </p>
+                </form>
+
+            </div>
+
+    </div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+</body>
+</html>

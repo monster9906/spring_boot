@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>书单列表</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../static/css/bootstrap.css">
+</head>
+<body>
+   <div class="panel-body">
+        <h2 class="page-header">书单详情页面</h2>
+       <div class="well">
+       <p>
+           <strong>书名：</strong> <span th:text="${book.name}">我的世界</span>
+       </p>
+       <p>
+           <strong>描述：</strong> <span th:text="${book.des}">这里是描述！！！</span>
+       </p>
+       <p>
+           <strong>作者：</strong> <span th:text="${book.author}">大冰</span>
+       </p>
+        <a href="javaScript:history.go(-1)" class="btn btn-default">返回</a>
+       </div>
+   </div> <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+   <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+   <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+
+</body>
+</html>
