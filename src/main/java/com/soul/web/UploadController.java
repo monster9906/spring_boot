@@ -27,6 +27,11 @@ public class UploadController {
         return "teacher/teacherManger";
     }
 
+    @GetMapping("/water")
+    public String water() {
+        return "teacher/waterPull";
+    }
+
     @PostMapping("/upload")
     @ResponseBody
     public Map upload(@RequestParam("lifePhoto") MultipartFile file) {

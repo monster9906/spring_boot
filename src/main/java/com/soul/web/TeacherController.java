@@ -61,6 +61,11 @@ public class TeacherController {
             page -=1;
         }
         teacherService.findByPage(page, pageSize);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return teacherService.findByPage(   page, pageSize);
     }
 
